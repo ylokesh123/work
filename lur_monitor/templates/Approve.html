@@ -1,0 +1,179 @@
+{% extends "index.html"%}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{% static "Approve.css" %}">
+    <!-- Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Add these script tags to your HTML file -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Approval Timesheet</title>
+
+</head>
+
+<body>
+
+    
+
+
+    <div class="timesheet">
+        <h1>Timesheet</h1>
+        <small>Approval timesheet</small>
+    </div>
+
+    <div style="padding-left: 22.1%;">
+
+        <br />
+
+        <div>
+            <section class="table">
+                <table style="padding-left: 22%;">
+                    <thead>
+                        <tr>
+                            <th> Employee Id </th>
+                            <th> Employee Name </th>
+                            <th> Date </th>
+                            <th> Weekly Hour's Worked </th>
+                            <th> Pending Hour's</th>
+                            <th> Status </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for i in emp %}
+                        <tr>
+                            <td>{{i.empId}}</td>
+                            <td>{{i.eFname}}</td>
+                            <td>17 Dec, 2022 </td>
+                            <td>40:30 Hrs</td>
+                            <td>04:30 hrs</td>
+                            <td>
+                                <p class="status approved">👍Approved</p> <br />
+                                <p class="status rejected">👎Rejected</p>
+                            </td>
+                        </tr>
+                      {% endfor %}
+                        
+                    </tbody>
+
+                </table>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        const search = document.querySelector('.input-group input'),
+            table_rows = document.querySelectorAll('tbody tr'),
+            table_headings = document.querySelectorAll('thead th');
+
+        // 1. Searching for specific data of HTML table
+        search.addEventListener('input', searchTable);
+
+        function searchTable() {
+            table_rows.forEach((row, i) => {
+                let table_data = row.textContent.toLowerCase(),
+                    search_data = search.value.toLowerCase();
+
+                row.classList.toggle('hide', table_data.indexOf(search_data) < 0);
+                row.style.setProperty('--delay', i / 25 + 's');
+            })
+
+            document.querySelectorAll('tbody tr:not(.hide)').forEach((visible_row, i) => {
+                visible_row.style.backgroundColor = (i % 2 == 0) ? 'transparent' : '#0000000b';
+            });
+        }
+
+        // 2. Sorting | Ordering data of HTML table
+
+        table_headings.forEach((head, i) => {
+            let sort_asc = true;
+            head.onclick = () => {
+                table_headings.forEach(head => head.classList.remove('active'));
+                head.classList.add('active');
+
+                document.querySelectorAll('td').forEach(td => td.classList.remove('active'));
+                table_rows.forEach(row => {
+                    row.querySelectorAll('td')[i].classList.add('active');
+                })
+
+                head.classList.toggle('asc', sort_asc);
+                sort_asc = head.classList.contains('asc') ? false : true;
+
+                sortTable(i, sort_asc);
+            }
+        })
+
+
+        function sortTable(column, sort_asc) {
+            [...table_rows].sort((a, b) => {
+                let first_row = a.querySelectorAll('td')[column].textContent.toLowerCase(),
+                    second_row = b.querySelectorAll('td')[column].textContent.toLowerCase();
+
+                return sort_asc ? (first_row < second_row ? 1 : -1) : (first_row < second_row ? -1 : 1);
+            })
+                .map(sorted_row => document.querySelector('tbody').appendChild(sorted_row));
+        }
+
+        const excel_btn = document.querySelector('#toEXCEL');
+
+        const toExcel = function (table) {
+
+            const t_heads = table.querySelectorAll('th'),
+                tbody_rows = table.querySelectorAll('tbody tr');
+
+            const headings = [...t_heads].map(head => {
+                let actual_head = head.textContent.trim().split(' ');
+                return actual_head.splice(0, actual_head.length - 1).join(' ').toLowerCase();
+            }).join('\t') + '\t' + 'image name';
+
+            const table_data = [...tbody_rows].map(row => {
+                const cells = row.querySelectorAll('td'),
+                    img = decodeURIComponent(row.querySelector('img').src),
+                    data_without_img = [...cells].map(cell => cell.textContent.trim()).join('\t');
+
+                return data_without_img + '\t' + img;
+            }).join('\n');
+
+            return headings + '\n' + table_data;
+        }
+
+        excel_btn.onclick = () => {
+            const excel = toExcel(customers_table);
+            downloadFile(excel, 'excel');
+        }
+
+        const downloadFile = function (data, fileType, fileName = '') {
+            const a = document.createElement('a');
+            a.download = fileName;
+            const mime_types = {
+                'json': 'application/json',
+                'csv': 'text/csv',
+                'excel': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            }
+            a.href = `
+        data:${mime_types[fileType]};charset=utf-8,${encodeURIComponent(data)}
+    `;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+        }
+    </script>
+
+</body>
+
+</html>
+{% endblock content %}

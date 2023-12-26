@@ -1,0 +1,171 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static "me.css" %}" />
+    <div class="content">
+        <div class="name">
+            <h3>hello, king</h3>
+        </div>
+        <div class="container">
+
+           
+            <div class="drop">
+                <label for="calendarInterval"></label>
+                <select id="calendarInterval" onchange="updateCalendar()"
+                    style="padding: 5px; border-radius: 50px; margin-left: 20px; width: 250px;">
+                    <option value="current">Current Date</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+
+                </select>
+                <div id="calendar" class="calendar"></div>
+            </div>
+        </div>
+
+
+
+        <div class="pro">
+            <ul>
+                <li><a href="me.html">Me</a></li>
+                <li><a href="weekly.html">All</a></li>
+
+            </ul>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <h3>TOTAL ACTIVITY TRACKED</h3>
+                <H1>0%</H1>
+                <p>->0%</p>
+            </div>
+            <div class="card">
+                <h3>TOTAL WORKED TIME</h3>
+                <H1>00:00:00</H1>
+                <p>->00:00:00</p>
+            </div>
+            <div class="card">
+                <h3>TOTAL EARNED</h3>
+                <H1>0</H1>
+                <p>->0</p>
+            </div>
+            <div class="card">
+                <h3>TOTAL PROJECT WORKED</h3>
+                <H1>0</H1>
+                <p>->0</p>
+            </div>
+        </div>
+        <div class="more">
+            <div class="car">
+                <h3>SHIFT SCHEDULE</h3>
+                <p>No data found</p>
+            </div>
+            <div class="card">
+                <h3>TIME OFF</h3>
+                <p>No data found</p>
+            </div>
+            <div class="card">
+                <h3>JOB SITE</h3>
+                <p>No data found</p>
+            </div>
+        </div>
+        <div class="time">
+            <div class="card">
+                <h3>TIMELINE</h3>
+                <ul>
+                    <li class="date">Date </li>
+                    <li>Time Tracked </li>
+                    <li>Start time </li>
+                    <li>End time </li>
+
+                </ul>
+                <div class="color">
+                    <div class="green">
+                        <div class="dot" style="background-color: green; height: 10px;width: 10px;margin-top: 15px;">
+
+                        </div>
+                        <p>Screen Time</p>
+                    </div>
+
+                    <div class="green">
+                        <div class="dot" style="background-color:yellow; height: 10px;width: 10px;margin-top: 15px;">
+
+                        </div>
+                        <p>Manual Time</p>
+                    </div>
+
+                    <div class="green">
+                        <div class="dot" style="background-color:blue; height: 10px;width: 10px;margin-top: 15px;">
+                        </div>
+                        <p>Mobile Time</p>
+                    </div>
+
+                    <div class="green">
+                        <div class="dot" style="background-color:gainsboro; height: 10px;width: 10px;margin-top: 15px;">
+
+                        </div>
+                        <p>Break Time</p>
+                    </div>
+
+                    <div class="green">
+                        <div class="dot" style="background-color:red; height: 10px;width: 10px;margin-top: 15px;">
+
+                        </div>
+                        <p>Over Exceed Of Break Time</p>
+                    </div>
+
+                    <div class="green">
+                        <div class="dot" style="background-color:brown; height: 10px;width: 10px;margin-top: 15px;">
+
+                        </div>
+                        <p>Rejected Time</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="graph">
+            <div class="card">
+                <h3>ACTIVITY GRAPH</h3>
+            </div>
+        </div>
+        <div class="sourced">
+            <div class="card">
+                <h3>RECENT SCREENSHOTS</h3>
+                <p>Currently Apps & Urls Data is Not available</p>
+                <a href="#">view all screenshots</a>
+            </div>
+            <div class="card">
+                <h3>RECENT PROJECTS</h3>
+                <p>Currently Apps & Urls Data is Not available</p>
+                <a href="#">view project</a>
+            </div>
+        </div>
+
+        <div class="source">
+            <div class="card">
+                <h3>RECENT USED WEBSITES</h3>
+                <p>Currently Apps & Urls Data is Not available</p>
+                <a href="#">view urls</a>
+            </div>
+            <div class="card">
+                <h3>RECENT USED APPLICATIONS</h3>
+                <p>Currently Apps Data is Not available</p>
+                <a href="#">view apps</a>
+            </div>
+        </div>
+
+        <div class="sourc">
+            <div class="card">
+                <h3>RECENT TIMESHEETS</h3>
+                <p>Currently timesheet data is Not available</p>
+                <a href="#">view Timesheets</a>
+            </div>
+            <div class="card">
+                <h3>RECENT TODOS</h3>
+                <p>To-Dos are Not assigned to you</p>
+                <a href="#">view To-Dos</a>
+            </div>
+        </div>
+
+    </div>
+
+
+    {% endblock content %}

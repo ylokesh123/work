@@ -1,0 +1,178 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+    .dropup {
+        position: relative;
+        display: inline-block;
+      }
+      
+      /* Dropup content (Hidden by Default) */
+      .dropup-content {
+        display: none;
+        position: absolute;
+        bottom: 50px;
+        background-color: rgb(238, 242, 246);
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      /* Links inside the dropup */
+      .dropup-content a {
+        border-top: 1px solid #cfcfcf;
+        font-size: 13px;
+        font-weight: 500;
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      .dropup-content a:hover {background-color:rgb(243, 249, 255)}
+      
+    
+      .dropup:hover .dropup-content {
+        display: block;
+      }
+      
+     
+      .dropup:hover .dropbtn {
+        background-color: rgb(238, 242, 246);
+      }
+    .contact{
+    min-height: 100vh;
+    padding: 50px;
+    text-align: center;
+    margin-left:280px;
+}
+.contact h1{
+    margin-bottom:50px;
+
+
+}
+
+
+.contact-wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20%;
+}
+.contact-form{
+    text-align: left;
+}
+.contact-form h3{
+    font-size: 27px;
+    margin-bottom: 30px;
+    color: #333;
+}
+.form-group{
+    margin-bottom: 20px;
+}
+input,textarea{
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #f8f9fa;
+    color: #333;
+}
+input:focus,
+textarea:focus{
+    outline: none;
+    box-shadow: 0 0 8px #bbb;
+}
+form button{
+    border-radius:10px;
+    margin-top: 20px;
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #001e32;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+form button:hover{
+    background-color: rgb(0, 6, 16);
+}
+.contact-info{
+    text-align: left;
+}
+.contact-info h3{
+    font-size: 27px;
+    margin-bottom: 20px;
+    color: #333;
+}
+.contact-info h4{
+    font-size: 17px;
+}
+.contact-info p{
+    margin-bottom: 10px;
+    color: #555;
+    font-size: 20px;
+}
+.contact-info i{
+    color: #080808;
+    margin-right: 10px;
+}
+@media screen and (max-width:768px){
+    .container{
+        padding: 20px;
+    }
+    .contact-wrapper{
+        grid-template-columns: 1fr;
+    }
+    
+}
+</style>
+</head>
+<body>
+
+
+<section class="contact">
+    <div class="container">
+        <h1>CONTACT US</h1>
+       <div class="contact-wrapper">
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <h4><i class="fa-solid fa-map-location-dot"></i>ADDRESS :</h4><br>
+            <p> Unit-603/D,5th Floor,vasavi MPM Grand,Beside Ameerpet Metro Station,Hyderabad-500073</p><br>
+            <h4><i class="fa-regular fa-envelope"></i></i>EMAIL :</h4><br>
+            <p>&nbsp; md@luritsolution.com</p><br>
+            <h4><i class="fa fa-phone"></i>PHONE :</h4><br>
+            <p> &nbsp;+91 6301553313</p>
+            <p> &nbsp;+91 9182483367</p>
+          </div>
+          <div class="contact-form" >
+            <h3>Send Us a Message</h3>
+            <form action="/contact_us" method="POST">
+                {% csrf_token %}
+             <div class="form-group">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+             </div>
+             <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+               </div>
+               <div class="form-group">
+                <textarea type="text" id="message" name="message" placeholder="Your Message" required></textarea>
+               <button type="submit" >Send Message</button>
+            </form>
+         </div>
+      </div>
+  </div>
+
+</section>
+</body>
+</html>
+
+
+{% endblock content %}

@@ -1,0 +1,56 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>TO-DOs</title>
+  <!--  -->
+  <link rel="stylesheet" href="{% static "todo.css" %}">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+<div class="content">
+  <div class="container">
+    <h1>TO-DOs</h1>
+
+    <div class="active">
+      <img src="{% static "img/emptyfolder.jpg" %}">
+      <p>There are no todos!</p><br>
+      <!-- <div class="btn">
+            <button type="select project" class="button">select project</button>
+           
+              <button type="submit" class="button">+ Add To-Dos</button>
+          </div> -->
+      <div class="dropdown-container">
+        <div class="dropdown">
+          <button class="dropbtn">Select Project</button>
+          <div class="dropdown-content">
+            <a href="#">Payroll</a>
+            <a href="#">Resturent</a>
+
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropbtn">+Add To-Dos</button>
+          <div class="dropdown-content">
+            <a href="#">ProjectManagment Module</a>
+          </div>
+        </div>
+      </div>
+   </div> 
+  </div>
+</body>
+
+</html>
+{% endblock content %}

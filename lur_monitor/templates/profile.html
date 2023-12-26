@@ -1,0 +1,239 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="{% static "profile.css" %}">
+  <title>Profile</title>
+</head>
+<body>
+  <div class="home" style="background-color:white; margin:20px; width:150px; border-radius:20px; padding:10px; border:1px solid black;"><a href="{% url "dash_week_me" %}" style="text-decoration: none; color: black;"><i class='bx bxs-left-arrow'></i>back to home</a></div>
+  <div class="content">
+    <div class="profile">
+      <div class="image"></div>
+      <div class="container">
+        <img src="https://cdn-icons-png.flaticon.com/512/456/456283.png?ga=GA1.1.405654275.1690798623" alt="Avatar"
+          class="image" style="width:100px; height: 100px; margin:0 50px;">
+        <div class="middle">
+          <div class="text"><a href="#" style="text-decoration: none; color: black;"><i class='bx bxs-camera-plus'></i>
+            <p>View All Photos</p></a>
+          </div>
+        </div>
+      </div>
+      <div class="name">
+        <p class="name">KING <span>NOT WORKING</span></p>  
+      </div>
+    </div>
+    <div class="bro">
+      <ul> 
+        <li><a href="">Profile</a></li> 
+      </ul>
+    </div>
+    <div class="contents">
+      <div class="card"> 
+        <form class="card-form">
+          <i class="fa-solid fa-pen-to-square"></i>
+          <div class="input">
+            <input type="text" class="input-field" value="" required />
+            <label class="input-label">About</label>
+          </div>
+          <div class="input">
+            <input type="text" class="input-field" value="" required />
+            <label class="input-label">What i love about my job</label>
+          </div>
+          <div class="input">
+            <input type="text" class="input-field" required />
+            <label class="input-label">My interests and hobbies</label>
+          </div>
+        </form>
+      </div>
+      <div class="break">
+        <div class="head">
+          <h3>credentials</h3>
+          <i class="fa-solid fa-pen-to-square"></i>
+        </div>
+        <form class="card-form">
+          <div class="input">
+            <input type="text" class="input-field" value="" required />
+            <label class="input-label">Email</label>
+          </div>
+          <div class="input">
+            <input type="password" class="input-field" value="" required />
+            <label class="input-label">password</label>
+          </div>
+          <div class="input">
+            <input type="text" class="input-field" required />
+            <label class="input-label">Name</label>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="procedure">
+      <div class="plan">
+        <div class="head">
+          <h3>Personal Information</h3>
+        <i class="fa-solid fa-pen-to-square"></i>
+        </div>
+        <form class="card-form">
+          <div class="input">
+            <input type="text" class="input-field" value="" required />
+            <label class="input-label">Alternate email</label>
+          </div>
+          <div class="input">
+            <input type="number" class="input-field" value="" required />
+            <label class="input-label">Country code</label>
+          </div>
+          <div class="input">
+            <input type="number" class="input-field" required />
+            <label class="input-label">Alternate phone number</label>
+          </div>
+        </form>
+      </div>
+      <div class="break">
+        <div class="head">
+          <h3>Primary Information</h3>
+        <i class="fa-solid fa-pen-to-square"></i>
+        </div>
+        <form class="card-form">
+          <div class="input">
+            <input type="email" class="input-field" value="" required />
+            <label class="input-label">Email</label>
+          </div>
+          <div class="input">
+            <input type="password" class="input-field" value="" required />
+            <label class="input-label">password</label>
+          </div>
+          <div class="input">
+            <input type="text" class="input-field" required />
+            <label class="input-label">Name</label>
+          </div>
+        </form>
+  
+      </div>
+    </div>
+  
+  
+    <div class="procedures">
+      <div class="plans">
+        <div class="head">
+          <h3>Job Details</h3>
+        <i class="fa-solid fa-pen-to-square"></i>
+        </div>
+        <form class="card-form">
+  
+          <div class="input">
+            <input type="text" class="input-field" value="" required />
+            <label class="input-label">Employee Id</label>
+          </div>
+          <div class="input">
+            <input type="text" class="input-field" value="" required />
+            <label class="input-label">work location</label>
+          </div>
+          <div class="input">
+            <input type="date" class="input-field" required />
+            <label class="input-label">Date Of Joining</label>
+          </div>
+          <div class="input">
+            <input type="text" class="input-field" required />
+            <label class="input-label">Employemnt type</label>
+          </div>
+        </form>
+      </div>
+      <div class="break">
+       <div class="head">
+        <h3>Emergency contact details</h3>
+        <i class="fa-solid fa-pen-to-square"></i>
+       </div>
+        <form class="card-form">
+          <div class="input">
+            <input type="text" class="input-field" value="" required />
+            <label class="input-label">Contact name</label>
+          </div>
+          <div class="input">
+            <input type="text" class="input-field" value="" required />
+            <label class="input-label">Relation</label>
+          </div>
+          <div class="input">
+            <input type="email" class="input-field" required />
+            <label class="input-label">Contact email</label>
+          </div>
+          <div class="input">
+            <input type="number" class="input-field" value="" required />
+            <label class="input-label">Country code</label>
+          </div>
+          <div class="input">
+            <input type="number" class="input-field" required />
+            <label class="input-label">Contact phone number</label>
+          </div>
+          <div class="input">
+            <input type="text" class="input-field" value="" required />
+            <label class="input-label">Contact Address</label>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="views">
+      <div class="freak">
+       <div class="head">
+        <h3>Identity Information</h3>
+        <i class="fa-solid fa-pen-to-square"></i>
+       </div>
+        &nbsp;
+        <p>Photo Id</p>
+        <a href=""> <button type="button">+Add New</button></a>
+        &nbsp;
+        <p>ADDRESS PROOF</p>
+        <a href=""> <button type="button">+Add New</button></a>
+        &nbsp;
+        <p>OTHERID/PROOF</p>
+        <a href=""> <button type="button">+Add New</button></a>
+        &nbsp;
+      </div>
+      <div class="progs">
+        <div class="head">
+          <h3>Banking Information</h3>
+        <i class="fa-solid fa-pen-to-square"></i>
+        </div>
+        <form class="card-form">
+          <div class="input">
+            <input type="text" class="input-field" value="" required />
+            <label class="input-label">Bank Account Number</label>
+          </div>
+          <div class="input">
+            <input type="text" class="input-field" value="" required />
+            <label class="input-label">Ifs Code</label>
+          </div>
+          <div class="input">
+            <input type="text" class="input-field" required />
+            <label class="input-label">Bank Name</label>
+          </div>
+          <div class="input">
+            <input type="text" class="input-field" required />
+            <label class="input-label">Branch Name</label>
+          </div>
+          <div class="input">
+            <input type="text" class="input-field" required />
+            <label class="input-label">Bank Address</label>
+          </div>
+      </div>
+    </div>
+    <div class="tree">
+      <h3>Danger Zone</h3>
+      <a href="">Delete account</a>
+      <p>Delete Account- After deleting your account you will no longer be allowed to login to your account
+        and also you would not be able to run your desktop application.
+      </p>
+      <a href="">Deactivate Your Account</a>
+      <p>This will not cancel your existing subscription. you can login any time to revisit your old 
+        data or activate your account again.
+      </p>
+  </div>
+
+</body>
+
+</html>

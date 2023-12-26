@@ -1,0 +1,208 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static "weekly.css" %}" />
+  <div class="content">
+    <div class="name">
+      <h3>hello, king</h3>
+    </div>
+    <div class="container">
+    
+      <div class="dropdown">
+        <button class="btn btn-light dropdown-toggle" type="button" id="multiSelectDropdown" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          filters
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="multiSelectDropdown">
+          <li>
+            <label>
+              <input type="checkbox" value="Total activity">
+              Total activity
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" value="Total Worked">
+              Total Worked
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" value="Total Earned">
+              Total Earned
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" value="Project Worked">
+              Project Worked
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" value="Hours Worked Per day">
+              Hours Worked Per day
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" value="Top Projects">
+              Top Projects
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" value="Online Members">
+              Online Members
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" value="Highest % of Manual & Mobile Time">
+              Highest % of Manual & Mobile Time
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" value="Tracked Most Hours">
+              Tracked Most Hours
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" value="Tracked Least Hours">
+              Tracked Least Hours
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" value=" Tracked Most Hours">
+              Tracked Most Hours
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" value="Recent Used Website">
+              Recent Used Website
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" value="Recent Used Application">
+              Recent Used Application
+            </label>
+          </li>
+          <li>
+            <label>
+              <input type="checkbox" value="Haven't Tracked Time">
+              Haven't Tracked Time
+            </label>
+          </li>
+          <li>
+
+        </ul>
+      </div>
+
+      <div class="drop">
+        <label for="calendarInterval"></label>
+        <select id="calendarInterval" onchange="updateCalendar()"
+          style="padding: 5px; border-radius: 50px; margin-left: 20px; width: 250px;">
+          <option value="current">Current Date</option>
+          <option value="weekly">Weekly</option>
+          <option value="monthly">Monthly</option>
+
+        </select>
+        <div id="calendar" class="calendar"></div>
+      </div>
+    </div>
+
+
+
+    <div class="pro">
+      <ul>
+        <li><a href="me.html">Me</a></li>
+        <li><a href="weekly.html">All</a></li>
+
+      </ul>
+    </div>
+
+
+    <div class="cards">
+      <div class="card">
+        <h3>TOTAL ACTIVITY TRACKED</h3>
+        <H1>0%</H1>
+        <p>->0%</p>
+      </div>
+      <div class="card">
+        <h3>TOTAL WORKED TIME</h3>
+        <H1>00:00:00</H1>
+        <p>->00:00:00</p>
+      </div>
+      <div class="card">
+        <h3>TOTAL EARNED</h3>
+        <H1>0</H1>
+        <p>->0</p>
+      </div>
+      <div class="card">
+        <h3>TOTAL PROJECT WORKED</h3>
+        <H1>0</H1>
+        <p>->0</p>
+      </div>
+    </div>
+    <div class="source">
+      <div class="card">
+        <h3>TOTAL HOURS WORKED PER DAY</h3>
+        <p>No data found</p>
+      </div>
+      <div class="card">
+        <h3>Activity GRAPH</h3>
+        <p>No data found</p>
+      </div>
+    </div>
+
+    <div class="sources">
+      <div class="card">
+        <h3>TOP PROJECTS</h3>
+        <p>Project are not assigned to you</p>
+        <a href="#">view projects</a>
+      </div>
+      <div class="card">
+        <h3>HIGHEST % of MANUAL & MOBILE TIME</h3>
+        <p>No data found</p>
+      </div>
+    </div>
+
+    <div class="sourcess">
+      <div class="card">
+        <h3>TRACKED MOST HOURS</h3>
+        <p>No data found</p>
+        <a href="#">view more</a>
+      </div>
+      <div class="card">
+        <h3>TRACKED LEAST HOURS</h3>
+        <p>No data found</p>
+        <a href="#">view more</a>
+      </div>
+    </div>
+    <div class="sourced">
+      <div class="card">
+        <h3>RECENT USED APPLICATIONS</h3>
+        <p>Currently Apps & Urls Data is Not available</p>
+        <a href="#">view apps</a>
+      </div>
+      <div class="card">
+        <h3>RECENT USED WEBSITES</h3>
+        <p>Currently Apps & Urls Data is Not available</p>
+        <a href="#">view urls</a>
+      </div>
+    </div>
+
+    <div class="sourc">
+      <div class="card">
+        <h3>HAVEN'T TRACKED TIME YET</h3>
+        <p>No data found</p>
+      </div>
+    </div>
+    
+  </div>
+  {% endblock content %}

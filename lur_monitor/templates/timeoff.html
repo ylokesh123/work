@@ -1,0 +1,70 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Time-Off</title>
+    <link rel="stylesheet" href="{% static "timeoff.css" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    
+    <div class="page-content">
+        <div class="header" style="font-size: 50px;">Time Off</div>
+        <!-- contnet categories starts -->
+        <div class="content-categories">
+            <div class="label-wrapper">
+                <input class="nav-item" name="nav" type="radio" id="opt-1" />
+                <label class="category" for="opt-1"> Submitted</label>
+            </div>
+            <div class="label-wrapper">
+                <input class="nav-item" name="nav" type="radio" id="opt-2" checked />
+                <label class="category" for="opt-2">Approved</label>
+            </div>
+            <div class="label-wrapper">
+                <input class="nav-item" name="nav" type="radio" id="opt-3" />
+                <label class="category" for="opt-3">Denied</label>
+            </div>
+        </div>
+
+        </br>
+        <div class="row-2">
+            <div class="section1">
+
+                <!-- <p><i class="fa-solid fa-arrow-up-from-bracket"></i><span>Upload</span></p> -->
+
+            </div>
+            <div class="section">
+                <div style="display: flex;">
+                    <p><i class="fa-solid fa-arrow-up-from-bracket"></i>Upload</p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <!-- </div> -->
+                    <p><i class="fa-solid fa-regular fa-gear"></i>Settings</p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- <h1 style="padding-left: 190px; font-size: 25px; color: blue; padding-top: 100px;">Active<h1> -->
+        <div class="active">
+            <img src="{% static "img/emptyfolder.jpg" %}">
+            <p style="margin-right: 100px;">There are no Clients active in this Organisation!</p>
+            <div class="button">
+                <button type="submit" class="button">+ Add New Client</button></a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+{% endblock content %}

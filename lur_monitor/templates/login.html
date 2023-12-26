@@ -1,0 +1,41 @@
+{% load static %}
+<html>
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+</head>
+<body id="login" >
+<hr class="mt-0">
+<div class="row">
+  <div class="col-lg-5 m-auto">
+    <div class="card mt-5 bg-secondary">
+      <div class="card-title text-center mt-3">
+          <img src="https://www.svgrepo.com/show/18941/man-user.svg " width="150" height="150">
+          <h2 class="text-white">Admin Login</h2>
+      </div>
+      <div class="card-body">
+        <form method="post">
+          {% csrf_token %}
+          <div class="input-group mb-3">
+              <div class="input-group-prepend">
+              </div>
+              <input type="text" name="username" class="form-control py-4" placeholder="UserName">
+          </div>
+          <div class="input-group mb-3">
+              <div class="input-group-prepend">
+              </div>
+              <input type="password" name="password" class="form-control py-4" placeholder="Password">
+          </div>
+          <input type="submit" value="Login" class="btn btn-primary px-5"><br>
+          <a href="{% url 'dash_week_me' %}" class="float-right mt-2 text-white"><i class="fas fa-angle-double-left"></i> Go Back To HomePage </i></a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+{% if msg %}
+<script>
+    alert('{{msg}}');
+</script>
+{% endif %}

@@ -1,0 +1,81 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "Organization.css" %}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+    <title>Document</title>
+</head>
+<style>
+     .btn{
+        margin:10px;
+        border-radius:10px;
+        padding:10px;
+        color:#fff;
+background-color:#07014f;
+border:none;
+    }
+.footer{
+    margin-right:100px;
+    margin-top:50vh;
+    width:90%;
+}
+</style>
+<body>
+    
+    <table >
+        <tr>
+            <th><h1>Clients</h1></th>
+            <th id="id2"><h3><a href="{% url "add_clients" %}" style="padding-left: 10px; text-decoration: none;color: black; margin-left:450px; background-color:#fff; border-radius:10px; padding:10px; border:1px solid black"><i class="fa fa-plus"></i>Add New Client</a></h3></th>
+        </tr>
+    </table><br><br>
+    <div class="div">
+    <table>
+        <tr>
+            <th  style="padding-left:50px;padding-top: 50px; margin-top:10px;">ACTIVE ORGANISATIONS</th>
+        </tr>
+    </table>
+</div>
+    <center>
+   <div class="div1">
+   
+    <table class="table6" border="0" cellpadding="0px" cellspacing="28px">
+       
+        <tr>
+          <th>Client</th>
+            <th>Project</th>
+            <th>Company</th>
+            <th>Project Type</th>
+            <th>Employee</th>
+            
+        </tr>
+        </div>
+        <div class="div3">
+            {% for i in client %}
+            <tr>
+              <td>{{i.client}}</td>
+              <td>{{i.pname}}</td>
+              <td>{{i.eCompany}}</td>
+              <td>{{i.pro_type}}</td>
+              <td>{{i.employee}}</td>
+            </tr>
+          </div>
+         </center>
+         {% endfor %}
+    </table>
+</div>
+
+</body>
+</html>
+
+{% endblock content %}

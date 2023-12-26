@@ -1,0 +1,179 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+<style>
+    .main-content{
+        margin-right:700px;
+    }
+    .record-header .dropbtn {
+        height:50px;
+        background-color: #34425a;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+      }
+      
+      /* The container <div> - needed to position the dropdown content */
+        .record-header .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      
+      /* Dropdown Content (Hidden by Default) */
+      .record-header .dropdown-content {
+        display: none;
+        height:200px;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      /* Links inside the dropdown */
+      .record-header .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      /* Change color of dropdown links on hover */
+      .record-header .dropdown-content a:hover {background-color: #f1f1f1}
+      
+      /* Show the dropdown menu on hover */
+      .record-header .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      
+      /* Change the background color of the dropdown button when the dropdown content is shown */
+      .record-header .dropdown:hover .dropbtn {
+        background-color: #34425a;
+      }
+</style>
+<link rel="stylesheet" href="{% static "Apps.css" %}">
+    <input type="checkbox" id="menu-toggle">
+    <div class="main-content">
+        <main>
+            <div class="page-header">
+                <h1>Activity</h1>
+                <small>Apps / Activity</small>
+                <div class="dropdown">
+                </div>
+            </div>
+            <div class="page-content">
+                <div class="analytics">
+                    <div class="card">
+                        <div class="card-head">
+                            <h2>17,200</h2>
+                        </div>
+                        <div class="card-progress">
+                            <small>App View's</small>
+                            <div class="card-indicator">
+                                <div class="indicator one" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-head">
+                            <h2>34,230</h2>
+                        </div>
+                        <div class="card-progress">
+                            <small>Page View's</small>
+                            <div class="card-indicator">
+                                <div class="indicator two" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-head">
+                            <h2>65,200</h2>
+                        </div>
+                        <div class="card-progress">
+                            <small>Url View's</small>
+                            <div class="card-indicator">
+                                <div class="indicator three" style="width: 65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-head">
+                            <h2>147,500</h2>
+                        </div>
+                        <div class="card-progress">
+                            <small>User activity this month</small>
+                            <div class="card-indicator">
+                                <div class="indicator four" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="records table-responsive">
+                    <div class="record-header">
+                        <div class="add">
+                            <div class="dropdown">
+                                <button class="dropbtn">EMP ID</button>
+                                <div class="dropdown-content">
+                                    <a href="{% url 'apps' 0 %}"> All</a>
+                                    {% for i in allempid %}
+                                    <a href="{% url 'apps' i.id %}">{{i.Empid}}</a>
+                                    {% endfor %}
+                                  
+                                </div>
+                        </div>
+                        </div>
+                        <input type="date" style="border-radius: 12px; border:none; padding:10px;">
+                    </div>
+                    <div>
+                        <table width="100%">
+                            <thead>
+                                <tr>
+                                    <th><span class="las la-sort"></span> Apps</th>
+                                    <th><span class="las la-sort"></span> Project</th>
+                                    <th><span class="las la-sort"></span> Time Spent</th>
+                                    <th><span class="las la-sort"></span> Sessions</th>
+                                    <th><span class="las la-sort"></span> Category</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for j in employee %}
+                                <tr>
+                                   
+                                    <td>
+                                        <div class="client">
+                                            <div class="client-img bg-img"
+                                                style="background-image: url({{j.app_img.url}})"></div>
+                                            <div class="client-info">
+                                                <h4>{{j.apps}}</h4>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    
+                                    <td>
+                                        {{j.empRole}}
+                                    </td>
+                                    <td>
+                                        00:23:00
+                                    </td>
+                                    <td>
+                                        3
+                                    </td>
+                                    <td>
+                                       {{j.eCompany}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        {% empty %}
+                                   {% endfor %}
+                                        
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    {% endblock content %}

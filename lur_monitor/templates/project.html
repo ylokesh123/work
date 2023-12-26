@@ -1,0 +1,173 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>project managment</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!--  -->
+    <link rel="stylesheet" href="{% static "project.css" %}" />
+    <style>
+     td .dropbtn {
+            background-color: #34425a;
+            color: white;
+            padding: 8px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+          }
+          
+          /* The container <div> - needed to position the dropdown content */
+           td .dropdown {
+            position: relative;
+            display: inline-block;
+          }
+          
+          /* Dropdown Content (Hidden by Default) */
+       td  .dropdown-content {
+            overflow: scroll;
+            height: 250px;
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+          }
+          
+    td .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+          }
+          
+          /* Change color of dropdown links on hover */
+      .record-header .dropdown-content a:hover {background-color: #f1f1f1}
+          
+     td  .dropdown:hover .dropdown-content {
+            display: block;
+          }
+          
+          /* Change the background color of the dropdown button when the dropdown content is shown */
+      td  .dropdown:hover .dropbtn {
+            background-color: #34425a;
+          }
+          .page-content .header{
+               margin: 0px;
+          }
+    </style>
+
+</head>
+
+<body>
+    
+   
+    <div class="page-content">
+        <div class="header"><h3>project</h3 ></div>
+        <!-- contnet categories starts -->
+        <div class="content-categories">
+            <div class="label-wrapper">
+                <a href="{% url 'project' 0 %}">TOTAL PROJECTS</a>
+            {% for i in allstatus %}
+            <a href="{% url 'project' i.id %}">{{i.status}}</a>
+            {% endfor %}
+        </div>
+            </div>
+        </div>
+
+        <!--  -->
+        <!-- contemt categories ends -->
+        <!-- tasks wrapper starts -->
+        <div class="tasks-wrapper">
+            {% for j in project %}
+            <div class="task">
+                <input class="task-item" name="task" type="checkbox" id="item-1"  />
+                <label for="item-{{i.id}}">
+                    <span class="label-text">{{j.project}}</span>
+                </label>
+                <span class="tag Yettostart">{{j.status}}</span>
+            </div>
+            {% empty %}
+            {% endfor %}
+            <br>
+            <br>
+
+            <table bgcolor="gray" width="100%" height="70"  class="table" style="border: #f1f1f1;">
+                <tr bgcolor="lightgray">
+                    <th width="100">PROJECT NAME</th>
+                    <th width="100">MEMBERS</th>
+                    <th width="100">CLIENTS</th>
+                    <th width="100">STATUS</th>
+                    <th width="100">PROGRESS</th>
+                </tr>
+                <tr bgcolor="white" align="center">
+                    <td>Default Project</td>
+                    <td> <img src="{% static "img\members.png" %}" width="15%">
+                    </td>
+                    <td>2</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="dropbtn">project</button>
+                            <div class="dropdown-content">
+                                <a href="{% url 'project' 0 %}">Total Project</a>
+                                {% for i in allstatus %}
+                                <a href="{% url 'project' i.id %}">{{i.status}}</a>
+                                {% endfor %}
+                              
+                            </div>
+                          </div>
+                    </td>
+                    <td>3</td>
+                </tr>
+            </table>
+
+            <br>
+            <br>
+
+            <div class="header upcoming">Upcoming Projects</div>
+            <div class="task">
+                <input class="task-item" name="task" type="checkbox" id="item-7" />
+                <label for="item-7">
+                    <span class="label-text">Hospital management</span>
+                </label>
+                <span class="tag waiting">Waiting</span>
+            </div>
+            <div class="task">
+                <input class="task-item" name="task" type="checkbox" id="item-8" />
+                <label for="item-8">
+                    <span class="label-text">Security Management</span>
+                </label>
+                <span class="tag waiting">Waiting</span>
+            </div>
+            <div class="task">
+                <input class="task-item" name="task" type="checkbox" id="item-9" />
+                <label for="item-9">
+                    <span class="label-text">HumanResource Management</span>
+                </label>
+                <span class="tag waiting">Waiting</span>
+            </div>
+            <div class="task">
+                <input class="task-item" name="task" type="checkbox" id="item-10" />
+                <label for="item-10">
+                    <span class="label-text">Software App Development</span>
+                </label>
+                <span class="tag waiting">Waiting</span>
+            </div>
+        </div>
+        <!-- tasks wrapper ends -->
+    </div>
+
+
+</body>
+
+</html>
+{% endblock content %}

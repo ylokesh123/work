@@ -1,0 +1,528 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 5px;
+    background-color: #E4E9F7;
+    /* background-color:darkgrey; */
+  }
+.card-container {
+    display: flex;
+  flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 4px;
+    padding-left: 40px;
+    gap: 12px;
+    width: 1250px;
+    padding-left: 300px;
+    gap: 20px; 
+    padding-top: 30px;
+  }
+  .card-containe {
+    display: flex;
+  flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 4px;
+    padding-left: 40px;
+    gap: 12px;
+    width: 700px;
+    padding-left: 230px;
+    gap: 20px; 
+  }
+
+.card {
+  text-align: justify;
+  height: 175px;
+  width: 450px;
+    flex: 1;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* margin-left: 120px; */
+    padding-left: 30px;
+  }
+  .card1{
+    text-align: justify;
+  height: 175px;
+  width: 380px;
+    flex: 1;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-left: 80px;
+    margin-top:20px ;
+  }
+  
+  .dark-mode {
+    background-color: rgb(0, 9, 81);
+    color: white;
+  }
+
+  /* Remove right margin from the last card */
+.card:last-child {
+    margin-right: 0;
+  }
+  .card  p{
+      font-size: 12px;
+      padding-left: 12px;
+      padding-top: 25px;
+  }
+  .card h4{
+      padding-right: 4px;
+  }
+  .card h4 i{
+    padding: 0 12px;
+    /* margin-right: 40px; */
+  }
+  .card1 h4{
+    padding-right: 4px;
+}
+.card1 h4 i{
+  padding: 0 12px;
+}
+.card2 h4{
+    padding-right: 4px;
+}
+.card2 h4 i{
+  padding: 0 12px;
+  /* margin-right: 40px; */
+}
+.card1  p{
+    font-size: 14px;
+    padding-left: 45px;
+}
+.card2  p{
+    font-size: 14px;
+    padding-left: 45px;
+}
+.card2 .p1{
+  font-size: 14px;
+  padding-left: 45px;
+}
+  .card h5 i{
+    padding: 0 12px;
+  }
+  .card-container2 {
+    display: flex;
+  flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 4px;
+    padding-left: 40px;
+    gap: 12px;
+    width: 1200px;
+    padding-left: 230px;
+    gap: 7px; 
+  }
+  .card2{
+    text-align: justify;
+  height: 175px;
+  width: 380px;
+    flex: 1;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-left: 80px;
+    margin-top:20px ;
+  }
+  .card3{
+    text-align: justify;
+    height: 200px;
+    width: 300%;
+      flex: 1;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      padding: 10px;
+      margin-right: 10px;
+      box-sizing: border-box;
+      overflow: hidden;
+      margin-left: 80px;
+      margin-top:20px;
+  }
+  h2 i{
+    padding: 0 14px;
+  }
+  h3 i{
+    padding: 0 14px;
+  }
+
+  /* Google Font Import - poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* ======= Color ====== */
+    --body-color: #E4E9F7;
+    --sidebar-color: #FFF;
+    --primary-color: #695CFE;
+    --primary-color-light: #F6F5FF;
+    --toggle-color: #DDD;
+    --text-color: #707070;
+
+    /* ======= Transition ====== */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+
+}
+
+body {
+    height: 100vh;
+    background: var(--body-color);
+
+}
+
+body.dark {
+    --body-color: #18191A;
+    --sidebar-color: #242526;
+    --primary-color: #3A3B3C;
+    --primary-color-light: #3A3B3C;
+    --toggle-color: #fff;
+    --text-color: #CCC;
+}
+
+.sidebar.close .text {
+    opacity: 0;
+}
+
+/* ===== Resuable CSS ===== */
+.sidebar .text {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* ===== Side bar ===== */
+.sidebar {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 280px;
+    padding: 10px 14px;
+    background: var(--sidebar-color);
+}
+.sidebar .close{
+width: 78px;
+}
+.sidebar li {
+    height: 50px;
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar li .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+    font-size: 30px;
+}
+
+.sidebar p {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.sidebar li .icon,
+.sidebar li .text {
+    color: var(--text-color);
+}
+
+.sidebar header {
+    position: relative;
+}
+
+.sidebar .image-text img {
+    width: 200px;
+    border-radius: 6px;
+}
+
+.sidebar header .image-text .header-text .icon {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+
+}
+
+.sidebar header .image-text .header-text .icon i {
+    padding: 5px;
+    background-color: #E4E9F7;
+    border-radius: 50%;
+}
+
+.sidebar header .image-text .header-text .icon a {
+    text-decoration: none;
+    color: #18191A;
+}
+
+.sidebar header .image-text .header-text .icon i:hover {
+    color: #24198d;
+    border: 2px solid #24198d;
+}
+
+/* width */
+::-webkit-scrollbar {
+    position: relative;
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    position: relative;
+    box-shadow: inset 0 0 5px rgb(239, 239, 239);
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    position: relative;
+    background: #E4E9F7;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #c8d6fd;
+}
+
+header .image-text .header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-text .name {
+    font-weight: 700;
+}
+
+.header-text .profession {
+    margin-top: -2px;
+}
+
+.sidebar header .toggle {
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    height: 25px;
+    width: 25px;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20%;
+    color: #ffffff;
+    font-size: 26px;
+
+}
+
+.sidebar li a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: var(--tran-04);
+
+}
+
+.sidebar li a:hover {
+    background-color: var(--body-color);
+}
+
+
+.sidebar li a:hover .text,
+.sidebar li a:hover .icon {
+    color: var(--primary-color);
+}
+
+
+.sidebar .menu-bar {
+    height: calc(100% - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-bar .mode {
+    background: var(--primary-color-light);
+}
+
+.menu-bar .mode .moon-sun {
+    height: 50px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+
+}
+
+.menu-bar .mode i {
+    position: absolute;
+}
+
+.menu-bar .mode i.sun {
+    opacity: 0;
+}
+
+.menu-bar .mode .toggle-switch {
+    height: 100%;
+    min-width: 60px;
+
+}
+
+.toggle-switch .switch {
+    position: relative;
+    height: 22px;
+    width: 44px;
+    border-radius: 25px;
+    background: red;
+}
+
+.switch::before {
+    content: '';
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    background: var(--sidebar-color);
+    transition: var(--tran-03);
+    cursor: pointer;
+}
+
+body.dark .switch::before {
+    left: 24px;
+
+}
+
+.user-log .user {
+    color: #0a0a0a;
+    border-radius: 50% ;
+    padding: 5px;
+    margin-bottom: 2px;
+    font-size: 25px;
+    margin-left: 30px;
+    gap: 50rem;
+    padding-top: 16px;
+}
+
+.user-log {
+    width: 280px;
+    display: flex;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: rgb(238, 242, 246);
+    color: black;
+    font-size: 20px;
+    border: none;
+}
+.user-log p{
+    font-size: 20px;
+    margin-left: 50px;
+    padding-top: 16px;
+
+}
+
+
+.dropbtn {
+    background-color: rgb(238, 242, 246);
+    color: black;
+    padding: 16px;
+    font-size: 26px;
+    border: none;
+    margin-left: 40px;
+  }
+  
+  /* The container <div> - needed to position the dropup content */
+  .dropup {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropup content (Hidden by Default) */
+  .dropup-content {
+    display: none;
+    position: absolute;
+    bottom: 50px;
+    background-color: rgb(238, 242, 246);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropup */
+  .dropup-content a {
+    border-top: 1px solid #cfcfcf;
+    font-size: 13px;
+    font-weight: 500;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropup-content a:hover {background-color:rgb(243, 249, 255)}
+  
+
+  .dropup:hover .dropup-content {
+    display: block;
+  }
+  
+ 
+  .dropup:hover .dropbtn {
+    background-color: rgb(238, 242, 246);
+  }
+
+  .footer {
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    display: flex;
+    gap: 7rem;
+    bottom: 0;
+    left: 0;
+  }
+  footer ul{
+    gap: 0.1rem;
+    display: flex;
+    padding-left: 255px;
+  }
+  footer ul li{
+    margin: 0 5px;
+    padding: 0 5px;
+    list-style: none;
+    
+  }
+  footer ul li a{
+    text-decoration: none;
+    color: #000;
+  }
+  footer p{
+    color: #949494;
+  }

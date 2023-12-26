@@ -1,0 +1,114 @@
+{% extends "index.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Employee System</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static '/styles.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  
+<style>
+
+  .forma {
+    padding: 10px 70px 70px 70px;
+  }
+  
+  .booking-form {
+    width: 61.67%;
+    background: rgba(0, 48, 110, 0.747);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-left: 10%;
+    
+    margin-top: 8%;
+  }
+  
+  .form-label {
+    color: white;
+  }
+  
+  .booking-form2 {
+    width: 41.67%;
+    background: rgba(0, 48, 110, 0.747);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-left: 5%;
+    margin-left: 28%;
+    margin-top: 10%;
+  }
+  
+  input {
+    display: inline-block;
+    
+    width: 100%;
+  }
+  
+  .booking-form3 {
+    width: 41.67%;
+    background: #07014f;
+    border: 10px;
+    padding-left: 7%;
+    margin-left: 35%;
+    margin-top: 10%;
+  }
+  .form-group{
+    display: flex;
+    gap: 3rem;
+  }
+
+  .Logo button{
+    background-color: rgb(3, 3, 37);
+  }
+  input{
+    padding: 5px;
+    border: none;
+    border-radius:5px;
+  }
+.footer{
+margin-right:100px;
+margin-top:50vh;
+width:90%;
+}
+      </style>
+  </head>
+  <body>
+    
+    <div>
+      <div class="booking-form3">
+          <h3 style="color: bisque;padding-top: 5%;">Update Company Details</h3>
+    
+    <form method="POST" action="/update/{{company.cName}}" class="forma">
+      {% csrf_token %}
+
+      <div class="form-group">
+        <label class="form-label">Company:</label>
+        
+        <input type="text" name="cName" value="{{company.cName}}" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Email:</label>
+        
+        <input type="text" name="cEmail" value="{{company.cEmail}}" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Logo:</label>
+        <input type="text" name="cLogo" value="{{company.cLogo}}" />
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Url:</label>
+        <input type="text" name="cUrl" value="{{company.cUrl}}" />
+      </div><br>
+
+      <button type="submit" class="btn" style="margin-left:100px; padding:5px; border-radius:10px;">Submit</button>
+    </form>
+  </div></div>
+  
+  </body>
+</html>
+{% endblock content %}

@@ -1,0 +1,204 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Shifts and Leaves</title>
+    <link rel="stylesheet" href="{% static "Schedule.css" %}" />
+    <!-- Font Awesome Cdn Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+   
+   
+    <div class="container">
+        <section class="main">
+            <div class="main-top">
+                <h1>Schedules</h1>
+
+                <div class="filter-options">
+                    <div class="filter-option">
+                        <select id="date">
+                            <option value="date1">Weekly</option>
+                            <option value="date2">Monthly</option>
+                        </select>
+                    </div>
+                    <div class="filter-option">
+                        <select id="name">
+
+                            <option value="name1">Prasuna</option>
+                            <option value="name2">manisha</option>
+                            <option value="name3">jyothi</option>
+                            <option value="name6">nandhini</option>
+                            <option value="name5">Omshekhar</option>
+                            <option value="name4">raju</option>
+                            
+                            
+                        </select>
+                    </div>
+                    <div class="date">
+                        <input type="date">
+                    </div>
+                </div>
+                &nbsp; &nbsp; &nbsp; &nbsp;
+                <div class="button">
+                    <input type="button" value="+ Add Schedule" />
+                </div>
+            </div>
+             <div style="background-color: rgb(230, 228, 224);padding:15px;">Dec 11,2023-Dec 17,2023</div>
+             <section class="Schedule">
+                <div class="Schedule"> 
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Member Name</th>
+                        <th>Mon<br> 11 Dec</th>
+                        <th>Tue<br> 12 Dec</th>
+                        <th>Wed<br> 13 Dec</th>
+                        <th>Thu<br> 14 Dec</th>
+                        <th>Fri<br> 15 Dec</th>
+                        <th>Sat<br> 16 Dec</th>
+                        <th>Sun<br>17 Dec</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Prasuna</td>
+                        <td>Normal Shift<br><h6>9:00AM-7:00PM</h6></td>
+                        <td></td>
+                        <td>Normal Shift<br><h6>9:00AM-7:00PM</h6></td>
+                        <td></td>
+                        <td>Normal Shift<br><h6>9:00AM-7:00PM</h6></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <!-- <tr class="active"> -->
+                    <tr>
+                        <td>Manisha</td>
+                        <td></td>
+                        <td>Normal Shift<br><h6>9:00AM-7:00PM</h6></td>
+                        <td></td>
+                        <td>Normal Shift<br><h6>9:00AM-7:00PM</h6></td>
+                        <td>Normal Shift<br><h6>9:00AM-7:00PM</h6></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>jyothi</td>
+                        <td>Normal Shift<br><h6>9:00AM-7:00PM</h6></td>
+                        <td></td>
+                        <td>Normal Shift<br><h6>9:00AM-7:00PM</h6></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Nandhini</td>
+                        <td></td>
+                        <td>Normal Shift<br><h6>9:00AM-7:00PM</h6></td>
+                        <td>Normal Shift<br><h6>9:00AM-7:00PM</h6></td>
+                        <td></td>
+                        <td>Normal Shift<br><h6>9:00AM-7:00PM</h6></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Omshekhar</td>
+                        <td>Normal Shift<br><h6>9:00AM-7:00PM</h6></td>
+                        <td>Normal Shift<br><h6>9:00AM-7:00PM</h6></td>
+                        <td></td>
+                        <td>Normal Shift<br><h6>9:00AM-7:00PM</h6></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Raju</td>
+                        <td>Normal Shift<br><h6>9:00AM-7:00PM</h6></td>
+                        <td></td>
+                        <td>Normal Shift<br><h6>9:00AM-7:00PM</h6></td>
+                        <td></td>
+                        <td>Normal Shift<br><h6>9:00AM-7:00PM</h6></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            </section> 
+        </section>
+    </div>
+      <div class="Leave">
+         <header>
+            <h1>Employee Leaves</h1>
+        </header> 
+        <div class="container">
+            <div class="leave-form">
+                <h2>Apply for Leave</h2>
+                <br>
+                <form id="leaveForm">
+                    <label for="employeeName">Employee Name:</label>
+                    <input type="text" id="employeeName" name="employeeName" required><br><br>
+    
+                    <label for="leaveType">Leave Type:</label>
+                    <select id="leaveType" name="leaveType" required>
+                        <option value="sick">Sick Leave</option>
+                        <option value="vacation">Vacation Leave</option>
+                        <option value="personal">Personal Leave</option>
+                    </select><br><br>
+    
+                    <label for="startDate">Start Date:</label>
+                    <input type="date" id="startDate" name="startDate" required><br><br>
+    
+                    <label for="endDate">End Date:</label>
+                    <input type="date" id="endDate" name="endDate" required><br><br>
+    
+                    <label for="reason">Reason:</label><br>
+                    <textarea id="reason" name="reason" rows="4" cols="50" required></textarea><br><br>
+    
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+    
+            <div class="leave-history">
+                <h2>Leave History</h2>
+                <table id="leaveHistory">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                        <tr>
+                            <td>11/12/2023</td>
+                            <td>Sick Leave</td>
+                            <td>12/12/2023</td>
+                            <td>16/12/2023</td>
+                            <td>Aprroved</td>
+                        </tr>
+                    
+                    <tbody>
+                        <!-- Leave history records will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+        <script src="{% static "scripts.js" %}"></script> 
+
+</body>
+
+</html>
+{% endblock content %}

@@ -1,0 +1,131 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five Cards with Gap</title>
+    <link rel="stylesheet" href="{% static "report.css" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+</head>
+
+
+<body>
+
+   
+
+    <h1 style="padding-left: 300px;">All Reports</h1>
+</br>
+
+    <h2 style="padding-left: 300px; padding-top: 15px; ">General</h2>
+    
+    <div class="card-container">
+        <div class="card">
+            
+            <h4><i  style="color: rgb(40, 177, 40); padding-right: 10px;" class="fa-solid fa-chart-line"></i>Time&Activity<i style="padding-left: 230px; color: blue;" class="fa-regular fa-bookmark"></i></h4>
+          <p>View team members’ total hours worked ,<br>
+             active time, idle time, and break time; this<br>
+              data is available in hours & percentage<br>
+               format.</p>
+        </div>
+        <div class="card">
+          <h5><i  style="color: rgb(42, 55, 197);"class="fa-solid fa-calendar-days"></i>Weekly<i style="padding-left: 220px; color: blue;" class="fa-regular fa-bookmark"></i></h5>
+          <p>View team members’ hours worked (per <br>
+            day) & collective hours (per week)<br>
+             average hours & average activity per day <br>
+             , and the total amount earned.</p>
+        </div>
+        <div class="card">
+          <h4><i  style="color:rgb(42, 55, 197);" class="fa-solid fa-laptop-code"></i>TimerApps<i style="padding-left: 220px; color: rgb(93, 149, 192);" class="fa-regular fa-bookmark"></i></h4>
+          <p>View apps used & URLs visited by team<br>
+             members, time spent, session , and<br>
+              category.</p>
+        </div>
+    </div>
+</br>
+
+    <h2 style="padding-left: 300px; padding-top: 15px;"><i style="color:rgb(213, 153, 41);"  class="fa-regular fa-rectangle-list"></i>Project & Task Report</h2>
+
+    <div class="card-containe">    
+        <div class="card1">
+            
+            <h4><i  style="color:rgb(222, 149, 53);"  class="fa-regular fa-rectangle-list"></i>todo::report_titles.en_title.project&Todo<i style="padding-left: 120px;" class="fa-regular fa-bookmar"></i></h4>
+            <p>View team members working on projects,<br>
+                todo assigned, status, start & end date of<br>
+                 projects.</p>
+        </div>
+    </div>
+</br>
+    <h2 style="padding-left: 300px; padding-top: 15px;"><i class="fa-solid fa-calendar-days"></i>Attendence Report</h2>
+    
+    <div class="card-container2">    
+    <div class="card2">
+            
+        <h4><i class="fa-solid fa-calendar-days"></i>todo::report_titles.en_title.Attendance &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Report - Basic<i style="padding-left: 120px;" class="fa-regular fa-bookmar"></i></h4>
+    </br>
+        <p>View team members working on projects,<br>
+            todo assigned, status, start & end date of<br>
+             projects.</p>
+    </div>
+        <div class="card2">
+            
+            <h4><i class="fa-solid fa-calendar-days"></i>todo::report_titles.en_title.Attendance &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Report - Advanced<i style="padding-left: 120px;" class="fa-regular fa-bookmar"></i></h4>
+        </br>
+            <p>View team members working on projects,<br>
+                todo assigned, status, start & end date of<br>
+                 projects.</p>
+                
+        </div>
+    </div>
+    <h3 style="padding-left: 300px; padding-top: 15px;"><i class="fa-solid fa-table"></i>Dynamic Report</h3>
+</br>
+    <div class="card-containe">    
+        <div class="card1">
+            
+            <h4><i  style="color:rgb(26, 152, 28);" class="fa-solid fa-table"></i>todo::report_titles.en_title.project&Todo<i style="padding-left: 120px;" class="fa-regular fa-bookmar"></i></h4>
+           <p>Here you can customize reports; select<br>
+             basic, activity, attendance, project, and<br>
+              job site details, and export customized<br>
+               reports as CSV.
+        </div>
+    </div>
+</br>
+    <h3 style="padding-left: 300px; padding-top: 15px;"><i  style="color:rgb(42, 55, 197);"  class="fa-solid fa-calendar-days"></i>Jobsites</h3>
+    <div class="card-containe">    
+        <div class="card1">
+            
+            <h4><i style="color:rgb(42, 55, 197);"  class="fa-solid fa-calendar-days"></i>Jobsite Visit Reports<i style="padding-left: 125px; color: rgb(64, 88, 206);" class="fa-regular fa-bookmark"></i></h4>
+        </br>
+            <p>View each member’s detailed details,<br>
+                 including job site , project name , job<br>
+                  creator , and enter & exit time.</p>
+        </div>
+    </div>
+</br>
+    <h3 style="padding-left: 300px; padding-top: 15px;"><i  style="color:rgb(190, 36, 36);" class="fa-regular fa-bell-slash"></i>Time Off transaction</h3>
+    
+    <div class="card-containe">    
+        <div class="card1">
+            
+            <h3 style=" padding-top: 15px;"><i  style="color:rgb(197, 42, 42);" class="fa-regular fa-bell-slash"></i>Time OFF<i style="padding-left: 150px; color: rgb(84, 113, 209);" class="fa-regular fa-bookmark"></i></h3>
+        </br>
+           <p> todo::report_descriptions.en_description. View<br>
+            team members’ time off transaction details like <br>
+            policy name, date,booked on (date),type,reason <br>
+            reason,change by (person),and duration
+        </div>
+    </div>
+  
+</body>
+
+</html>
+{% endblock content %}

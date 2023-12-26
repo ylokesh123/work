@@ -1,0 +1,128 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+<style>
+
+    .record-header .dropbtn {
+        height:40px;
+        background-color: #34425a;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+      }
+      
+      /* The container <div> - needed to position the dropdown content */
+        .record-header .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      
+      /* Dropdown Content (Hidden by Default) */
+      .record-header .dropdown-content {
+        overflow:scroll;
+        height: 400px;
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+      }
+      
+      /* Links inside the dropdown */
+      .record-header .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      /* Change color of dropdown links on hover */
+      .record-header .dropdown-content a:hover {background-color: #f1f1f1}
+      
+      /* Show the dropdown menu on hover */
+      .record-header .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      
+      /* Change the background color of the dropdown button when the dropdown content is shown */
+      .record-header .dropdown:hover .dropbtn {
+        background-color: #34425a;
+      }
+</style>
+<link rel="stylesheet" href="{% static "URL.css" %}">
+
+    
+    <div class="content">
+        <input type="checkbox" id="menu-toggle">
+        <div class="main-content">
+            <div class="urls">
+            <h4>ACTIVITY</h4>
+            <br>
+            <h1>URLs</h1>
+            </div>
+            <div class="records table-responsive">
+                <div class="record-header">
+                    <div class="add">
+                        <span>Employee ID</span>
+                        <div class="dropdown">
+                            <button class="dropbtn">EMP ID</button>
+                            <div class="dropdown-content">
+                                <a href="{% url 'urls' 0 %}"> All</a>
+                                {% for i in allempid %}
+                                <a href="{% url 'urls' i.id %}">{{i.Empid}}</a>
+                                {% endfor %}
+                              
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <input type="date">
+                    </div>
+                </div>
+                <div>
+                    <table width="100%">
+                        <thead>
+                            <tr>
+                                <th><span class="las la-sort"></span> URL'S</th>
+                                <th><span class="las la-sort"></span> Project</th>
+                                <th><span class="las la-sort"></span> Time Spent</th>
+                                <th><span class="las la-sort"></span> Sessions</th>
+                                <th><span class="las la-sort"></span> Category</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for j in employee %}
+                            <tr>
+                                <td>
+                                    {{j.created}}
+                                </td>
+                            </tr>
+                            <tr>
+                               <td>
+                                    <a href="{{j.url}}" style="color: rgb(46, 46, 139);" target="_blank">{{j.url}}</a>
+                                </td>
+                                <td>
+                                    Payroll
+                                </td>
+                                <td>
+                                    02:30:14
+                                </td>
+                                <td>
+                                    3
+                                </td>
+                                <td>
+                                    Productive
+                                </td>
+                            </tr>
+                            {% empty %}
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock content %}

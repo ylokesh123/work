@@ -1,0 +1,180 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+
+    <title>Admin</title>
+    <link rel="stylesheet" href="{% static "Attedence.css" %}" />
+
+    <!-- Font Awesome Cdn Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+            .main-content{
+                margin-right:700px;
+            }
+            .attendance .dropbtn {
+                border-radius: 10px;
+                background-color: #34425a;
+                color: white;
+                padding: 10px;
+                font-size: 16px;
+                border: none;
+                cursor: pointer;
+              }
+              
+              /* The container <div> - needed to position the dropdown content */
+                .attendance .dropdown {
+                position: relative;
+                display: inline-block;
+              }
+              
+              /* Dropdown Content (Hidden by Default) */
+              .attendance .dropdown-content {
+                overflow: scroll;
+                height: 250px;
+                display: none;
+                position: absolute;
+                background-color: #f9f9f9;
+                min-width: 160px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+              }
+              
+              /* Links inside the dropdown */
+              .attendance .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+              }
+              
+              /* Change color of dropdown links on hover */
+              .attendance .dropdown-content a:hover {background-color: #f1f1f1}
+              
+              /* Show the dropdown menu on hover */
+              .attendance .dropdown:hover .dropdown-content {
+                display: block;
+              }
+              
+              /* Change the background color of the dropdown button when the dropdown content is shown */
+              .attendance .dropdown:hover .dropbtn {
+                background-color: #34425a;
+              }
+        </style>
+</head>
+
+<body>
+
+
+   
+    <div class="container">
+        <section class="main">
+            <div class="main-top">
+                <h1>Admin</h1>
+                <i class="fas fa-user-cog"></i>
+            </div>
+
+
+            <div class="documents-user-profile">
+                <div class="user-image">
+                    <img src="{% static "img/img4.jpg" %}" alt="">
+                </div>
+                <div class="user-details-flex">
+                    <div class="user-details-row">
+                        <p>LUR IT BUSSINESS SOLUTIONS PVT.LTD</p>
+                        <div class="user-social-row">
+                            <p><i class="fa-solid fa-magnifying-glass-location"></i><span>Location</span></p>
+                            <p><i class="fa-solid fa-envelope"></i><span>manikanta@gmail.com</span></p>
+                            <p><i class="fa-solid fa-phone"></i><span>+91 99999 77777</span></p>
+                        </div>
+                    </div>
+                    <div class="user-job-row">
+                        <table>
+                            <tr>
+                                <!-- <th>Job Title</th> -->
+                                <th>Designation</th>
+                                <th>Employee Id</th>
+                            </tr>
+                            <tr>
+                                <!-- <td>Junior</td> -->
+                                <td>Admin</td>
+                                <td>LUR 001</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <section class="attendance">
+                <div class="attendance-list">
+                    <h1>Attendance List</h1>
+                    <div class="filter-options">
+                        <div class="filter-option">
+                            <div class="dropdown">
+                                <button class="dropbtn">EMP ID</button>
+                                <div class="dropdown-content">
+                                    <a href="{% url 'attendence' 0 %}"> All</a>
+                                    {% for i in allempid %}
+                                    <a href="{% url 'attendence' i.id %}">{{i.Empid}}</a>
+                                    {% endfor %}
+                                  
+                                </div>
+                                </div>
+                                <input type="date" style="margin-left: 500px;">
+                        </div>
+
+                       
+                    </div>
+                    <table class="table">
+                        <thead>
+                            
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Designation</th>
+                                <th>Date</th>
+                                <th>Signin Time</th>
+                                <th>Signout Time</th>
+                                <th>Total Hour's</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for j in employee %}
+                            <tr>
+                                <td>{{j.empId}}</td>
+                                <td>{{j.eFname}}</td>
+                                <td>{{j.empRole}}</td>
+                                <td>01/12/2023</td>
+                                <td>8:00AM</td>
+                                <td>4:00PM</td>
+                                <td>8:00 Hr's</td>
+                            </tr>
+                            {% empty %}
+                                   {% endfor %}
+                            <!-- <tr class="active"> -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+    </div>
+  
+
+</body>
+
+</html>
+{% endblock content %}

@@ -1,0 +1,62 @@
+
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "general.css" %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+
+
+    <div class="box">
+        <div class="activel1">
+            <h2>Allow the team members to modify their time manually</h2>
+
+            <div class="button">
+                <button type="submit" class="button">Manager</button>
+                <button type="submit" class="button">User</button>
+                <button type="submit" class="button">None</button>
+            </div>
+        </div>
+        <div class="dropdown-content">
+            <a href="#">Default Members Role</a>
+            <a href="#">Manage Project ID</a>
+            <a href="#">Manage ToStatus</a>
+            <a href="#">Manage ToDo/TaskId</a>
+            
+                
+        </div>
+    </div>
+
+    <div class="box1">
+        <div class="active">
+            <h4>INDIVIDUAL SETTINGS</h4>
+            
+        </div>
+
+    </div>
+    <h1 style="padding-left: 140px; font-size: 25px; color: blue; padding-top: px;">Active<h1> 
+        <h4 style="padding-left: 350px; font-size: 20px; padding-bottom: 50px;">INDIVIDUAL SETTINGS</h4>
+        
+            <div class="active1">
+              <img src="{% static "img/EmptyFolder.jpg" %}">
+              <p style="padding-left: 160px;">There are no Clients active in this Organisation!</p>
+            </div>
+        </div>
+</body>
+</html>
+{% endblock content %}
